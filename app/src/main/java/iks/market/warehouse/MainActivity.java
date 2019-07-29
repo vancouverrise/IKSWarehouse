@@ -103,5 +103,6 @@ public class MainActivity extends AppCompatActivity {
         dialog.setView(dialogView);
         dialog.show();
         System.out.println("This is the end");
+        System.out.println("This is the end");
     }
 }
