@@ -22,7 +22,6 @@ public class DocHeader {
         this.documentNumber = documentNumber;
         this.code = code;
         this.name = name;
-
         this.description = description;
     }
 

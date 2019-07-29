@@ -30,5 +30,6 @@ dependencies {
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     implementation 'de.siegmar:fastcsv:1.0.3'
+    implementation 'com.google.android.material:material:1.0.0'
 
 }
