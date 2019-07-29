@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +25,7 @@ import iks.market.warehouse.Recyclers.DocumentsViewAdapter;
 public class MainActivity extends AppCompatActivity {
 
     Button buttonAdd, buttonGet, buttondDelete;
+    EditText searchCode, searchName;
     RecyclerView recyclerView;
     EditText editText;
 
@@ -43,6 +46,8 @@ public class MainActivity extends AppCompatActivity {
         buttonGet       = findViewById(R.id.buttonGet);
         editText        = findViewById(R.id.primaryEdit);
         recyclerView    = findViewById(R.id.documentsRecycler);
+
+
 
         final DocumentsDatabase documentsDatabase = DocumentsDatabase.getInstance(this);
         documentsDatabase.docHeaderDao().getDocumentsHeaderList();
@@ -104,5 +109,6 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
         System.out.println("This is the end");
         System.out.println("This is the end");
+
     }
 }
