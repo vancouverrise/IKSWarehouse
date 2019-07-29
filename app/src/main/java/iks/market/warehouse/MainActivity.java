@@ -102,5 +102,6 @@ public class MainActivity extends AppCompatActivity {
         final AlertDialog dialog = new AlertDialog.Builder(this).create();
         dialog.setView(dialogView);
         dialog.show();
+        System.out.println("This is the end");
     }
 }
