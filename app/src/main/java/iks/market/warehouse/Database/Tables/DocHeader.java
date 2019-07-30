@@ -1,5 +1,6 @@
 package iks.market.warehouse.Database.Tables;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
@@ -8,7 +9,8 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "DocHeader")
 public class DocHeader {
     @PrimaryKey
-    public long documentNumber;
+    @NonNull
+    public String documentNumber;
     @ColumnInfo(name = "DOCNUMBER")
     public String docnumber;
     @ColumnInfo(name = "CODE")
@@ -18,7 +20,7 @@ public class DocHeader {
     @ColumnInfo(name = "DESCRIPTION")
     public String description;
 
-    public DocHeader(long documentNumber, String code, String name, String description){
+    public DocHeader(String documentNumber, String code, String name, String description){
         this.documentNumber = documentNumber;
         this.code = code;
         this.name = name;

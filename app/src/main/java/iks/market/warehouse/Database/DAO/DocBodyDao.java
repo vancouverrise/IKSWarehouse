@@ -16,6 +16,8 @@ public interface DocBodyDao {
     List<DocBody> getDocBodyList();
     @Insert
     void insertDocuments(DocBody docBody);
+    @Insert
+    void insertList(List<DocBody> docBodyList);
     @Update
     void updateDocuments(DocBody docBody);
     @Delete

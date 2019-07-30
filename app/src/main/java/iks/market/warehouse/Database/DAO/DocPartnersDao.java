@@ -16,6 +16,8 @@ public interface DocPartnersDao {
     List<DocPartners> getPartnerList();
     @Insert
     void insertDocuments(DocPartners partners);
+    @Insert
+    void insertDocuments(List<DocPartners> partners);
     @Update
     void updateDocuments(DocPartners partners);
     @Delete
