@@ -2,6 +2,7 @@ package iks.market.warehouse;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,13 +34,16 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> code = new ArrayList<>();
     ArrayList<String> vendorArray = new ArrayList<>();
 
+    static DocumentsDatabase documentsDatabase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final Intent intent = new Intent(this, AddDocument.class);
+        documentsDatabase = DocumentsDatabase.getInstance(this);
+
 
         buttondDelete   = findViewById(R.id.deletebtn);
         buttonAdd       = findViewById(R.id.buttonAdd);
@@ -49,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final DocumentsDatabase documentsDatabase = DocumentsDatabase.getInstance(this);
+
         documentsDatabase.docHeaderDao().getDocumentsHeaderList();
         documentsDatabase.docBodyDao().getDocBodyList();
 
@@ -60,7 +64,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 // DocHeader docHeader = new DocHeader(Long.parseLong(editText.getText().toString()), null, null, null);
                 // documentsDatabase.docHeaderDao().deleteDocuments(docHeader);
-               Adddialog();
+                AddDocumentFragment addDocumentFragment = new AddDocumentFragment();
+                addDocumentFragment.show(getSupportFragmentManager(), "MyAddFragment");
             }
         });
 

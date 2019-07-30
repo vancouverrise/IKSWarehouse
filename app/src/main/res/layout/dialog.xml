@@ -29,7 +29,8 @@
         android:ems="10"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:hint="Номер локумента"
-        android:inputType="textPersonName"
+        android:inputType="number"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -80,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/documentName_text" />
 
     <Button
-        android:id="@+id/cancelDocument"
+        android:id="@+id/cancelAddDocument"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
